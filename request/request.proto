@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package client.request;
+
+option go_package = "github.com/TemaKut/messenger/pkg/proto/client/proto/gen/request";
+
+
+message Request {
+    string id = 1;
+    reserved 2 to 50;
+    oneof data {
+        RequestAuth auth = 51;
+    }
+}
+
+message RequestAuth {
+    oneof identifier {
+        string phone = 1;
+        string email = 2;
+    }
+
+    reserved 3 to 10;
+
+    string password = 11;
+}
