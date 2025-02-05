@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package client.response;
+
+option go_package = "github.com/TemaKut/messenger/pkg/proto/client/proto/gen/response";
+
+message Response {
+    string id = 1;
+    reserved 2 to 50;
+    oneof data {
+        ResponseAuth auth = 51;
+    }
+}
+
+message ResponseAuth {
+}
